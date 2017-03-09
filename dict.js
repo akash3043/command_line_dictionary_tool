@@ -1,19 +1,20 @@
 #!/usr/bin/env node
+var helperFunctions = require('./helperFunctions')
 
 var dict ={};
 
 dict.returnOutput = function(arguments){
 
 //store length of command line aruguments
-  let length =  arguments.length;
+  var length =  arguments.length;
 //store command given by the user
-  let command = arguments[2]||null;
+  var command = arguments[2]||null;
 //store word input given by the user
-  let input = arguments[3]||null;
+  var input = arguments[3]||null;
 
   if(length===2){
 //Display the word of the day if there are only two inputs i.e. node ./dict
-      console.log('Display word of the day');
+      helperFunctions.wordOfTheDay();
 
   }else if(length ===3){
 
@@ -34,16 +35,16 @@ dict.returnOutput = function(arguments){
     switch(command){
 
       case 'def' :
-          console.log('display the definition of '+input);
+          helperFunctions.wordDefinitions(input);
           break;
       case 'syn' :
-          console.log('display the synonyms of '+ input);
+          helperFunctions.wordSynonyms(input);
           break;
       case 'ant' :
-          console.log('display the antonyms of '+ input);
+          helperFunctions.wordAntonyms(input);
           break;
       case 'ex' :
-          console.log('display the examples of '+ input);
+          helperFunctions.wordExamples(input)
           break;
       case 'dict' :
           console.log('display the details of ' + input);
