@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var helperFunctions = require('./helperFunctions');
 var completeWordInfo = require('./completeWordInfo');
-
+var playWordGames =require('./playWordGames');
 var dict ={};
 
 dict.returnOutput = function(arguments){
@@ -22,7 +22,7 @@ dict.returnOutput = function(arguments){
 //Play word game if command is play else ask for correct command
       if(command='play'){
 
-        console.log('lets play a word game');
+        playWordGames();
 
       }else{
 
