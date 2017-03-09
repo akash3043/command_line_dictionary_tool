@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-var helperFunctions = require('./helperFunctions')
+var helperFunctions = require('./helperFunctions');
+var completeWordInfo = require('./completeWordInfo');
 
 var dict ={};
 
@@ -47,7 +48,7 @@ dict.returnOutput = function(arguments){
           helperFunctions.wordExamples(input)
           break;
       case 'dict' :
-          console.log('display the details of ' + input);
+          completeWordInfo(input);
           break;
       default :
           console.log('please enter correct the command');

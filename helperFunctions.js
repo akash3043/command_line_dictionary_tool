@@ -1,33 +1,31 @@
-
-
-var wordInfo = require('./wordInfo')
+var wordRelatedInfo = require('./wordRelatedInfo')
 var async = require('async')
 
 var helperFunctions ={};
 
 helperFunctions.wordExamples= function(word){
 
-  wordInfo('examples',word);
+  wordRelatedInfo('examples',word);
 }
 
 helperFunctions.wordDefinitions = function(word){
 
-  wordInfo('definitions', word);
+  wordRelatedInfo('definitions', word);
 }
 
 helperFunctions.wordSynonyms = function(word){
 
-  wordInfo('synonyms', word);
+  wordRelatedInfo('synonyms', word);
 }
 
 helperFunctions.wordAntonyms = function(word){
 
-  wordInfo('antonyms', word);
+  wordRelatedInfo('antonyms', word);
 }
 
 helperFunctions.wordOfTheDay = function(word){
 
-  wordInfo('wordOfTheDay', word);
+  wordRelatedInfo('wordOfTheDay', word);
 }
 
 

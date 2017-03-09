@@ -1,26 +1,30 @@
-var printInfo = {};
+var printRelatedInfo = {};
 
-printInfo.printExamples = function(data){
+printRelatedInfo.printExamples = function(data){
 
   console.log(data)
 }
 
-printInfo.printDefinitions = function(data){
+printRelatedInfo.printDefinitions = function(data){
 
   console.log(data);
 }
 
-printInfo.printSynonyms = function(data){
+printRelatedInfo.printSynonyms = function(data){
   console.log(data);
 }
 
-printInfo.printAntonyms = function(data){
+printRelatedInfo.printAntonyms = function(data){
 
   console.log(data);
 }
 
-printInfo.printWordOfTheDay = function(data){
+printRelatedInfo.printWordOfTheDay = function(data){
   console.log(data)
 }
 
-module.exports = printInfo
+printRelatedInfo.printWordDetails = function(data){
+  console.log(data);
+}
+
+module.exports = printRelatedInfo

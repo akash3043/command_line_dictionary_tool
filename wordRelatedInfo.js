@@ -1,7 +1,7 @@
 var http = require('http')
-var printInfo = require('./printInfo');
+var printRelatedInfo = require('./printRelatedInfo');
 
-var wordInfo = function(requestType, word){
+var wordRelatedInfo = function(requestType, word){
 
 var host = 'api.wordnik.com';
 
@@ -47,24 +47,24 @@ http.get(options, function(res){
       switch(requestType){
 
           case 'examples' :
-              printInfo.printExamples(JSON.parse(body));
+              printRelatedInfo.printExamples(JSON.parse(body));
               break;
           case 'definitions' :
-              printInfo.printDefinitions(JSON.parse(body));
+              printRelatedInfo.printDefinitions(JSON.parse(body));
               break;
           case 'synonyms' :
-              printInfo.printSynonyms(JSON.parse(body));
+              printRelatedInfo.printSynonyms(JSON.parse(body));
               break;
           case 'antonyms' :
-              printInfo.printAntonyms(JSON.parse(body));
+              printRelatedInfo.printAntonyms(JSON.parse(body));
               break;
           case 'wordOfTheDay':
-              printInfo.printWordOfTheDay(JSON.parse(body));
+              printRelatedInfo.printWordOfTheDay(JSON.parse(body));
               break;
         }
 
     })
-    
+
     res.on('error', function(err){
       console.log('We are unable to fetch the details'+ err.messages)
     })
@@ -72,4 +72,4 @@ http.get(options, function(res){
 
 }
 
-module.exports = wordInfo
+module.exports = wordRelatedInfo
