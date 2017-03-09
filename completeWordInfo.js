@@ -17,7 +17,7 @@ async.parallel({
           results+=data;
         })
         res.on('end', function(){
-          callback(null,(results));
+          callback(null,JSON.parse(results));
         })
       })
     },
@@ -28,7 +28,7 @@ async.parallel({
           results+=data;
         })
         res.on('end', function(){
-          callback(null, results)
+          callback(null, JSON.parse(results))
         })
       })
     },
@@ -39,7 +39,7 @@ async.parallel({
           results+=data;
         })
         res.on('end', function(){
-          callback(null, results)
+          callback(null, JSON.parse(results))
         })
       })
     },
@@ -50,7 +50,7 @@ async.parallel({
           results+=data;
         })
         res.on('end', function(){
-          callback(null, results)
+          callback(null, JSON.parse(results))
         })
       })
     }

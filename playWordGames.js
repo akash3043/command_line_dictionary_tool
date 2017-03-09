@@ -90,7 +90,7 @@ var playWordGames = function(){
                                     console.log('Correct Answer')
                                     rl.close();
                                   }else{
-                                    console.log('Wrong Answer. Below is the correct answer')
+                                    console.log('Wrong Answer. Correct answer is '+word)
                                     rl.close();
                                     completeWordInfo(word);
                                   }
@@ -103,14 +103,14 @@ var playWordGames = function(){
                                         console.log('Correct answer');
                                         rl.close();
                                     }else{
-                                        console.log("Wrong Answer. Below is the correct answer")
+                                        console.log("Wrong Answer. Correct answer is "+word)
                                         rl.close();
                                         completeWordInfo(word);
                                     }
                               })
                           }else if(answer==='quit'){
                               rl.close();
-                              console.log('Below is the correct answer');
+                              console.log('Correct answer is '+word);
                               completeWordInfo(word);
                           }
                   })
