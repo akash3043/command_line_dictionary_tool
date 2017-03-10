@@ -1,7 +1,8 @@
-#!/usr/bin/env node
 var helperFunctions = require('./helperFunctions');
 var completeWordInfo = require('./completeWordInfo');
 var playWordGames =require('./playWordGames');
+var chalk = require('chalk') //To format color of the command line text
+var clear = require('clear'); //to clear the console
 var dict ={};
 
 dict.returnOutput = function(arguments){
@@ -15,18 +16,19 @@ dict.returnOutput = function(arguments){
 
   if(length===2){
 //Display the word of the day if there are only two inputs i.e. node ./dict
+      clear();
       helperFunctions.wordOfTheDay();
 
   }else if(length ===3){
 
 //Play word game if command is play else ask for correct command
-      if(command='play'){
-
+      if(command==='play'){
+        clear();
         playWordGames();
 
       }else{
 
-        console.log('Please enter the correct command');
+        console.log(chalk.red('Please enter the correct command'));
       }
 
   }else if(length===4){
@@ -36,24 +38,37 @@ dict.returnOutput = function(arguments){
     switch(command){
 
       case 'def' :
+          clear();
+          console.log('You have entered the word : '+input)
           helperFunctions.wordDefinitions(input);
           break;
       case 'syn' :
+          clear();
+          console.log('You have entered the word : '+input)
           helperFunctions.wordSynonyms(input);
           break;
       case 'ant' :
+          clear();
+          console.log('You have entered the word : '+input)
           helperFunctions.wordAntonyms(input);
           break;
       case 'ex' :
+          clear();
+          console.log('You have entered the word : '+input)
           helperFunctions.wordExamples(input)
           break;
       case 'dict' :
+          clear();
+          console.log('You have entered the word : '+input)
           completeWordInfo(input);
           break;
       default :
-          console.log('please enter correct the command');
+          clear();
+          console.log(chalk.red('please enter correct the command'));
           break;
       }
+  }else {
+      console.log(chalk.red("Please enter the correct command"))
   }
 }
 

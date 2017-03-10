@@ -1,3 +1,4 @@
+//Get respective details i.e. examples, definitions, synonyms & antonyms for a given word
 var http = require('http')
 var printRelatedInfo = require('./printRelatedInfo');
 
@@ -7,6 +8,7 @@ var host = 'api.wordnik.com';
 
 var path, result;
 
+//check the type of request and decide the path accordingly
 switch(requestType){
 
     case 'examples' :
@@ -35,7 +37,7 @@ var options = {
      path : path,
      port : 80
   }
-
+//making http request to get response from wordnik api
 http.get(options, function(res){
 
     var body ='';
@@ -43,7 +45,7 @@ http.get(options, function(res){
       body+=data;
     })
     res.on('end', function(){
-
+//print response based on request type
       switch(requestType){
 
           case 'examples' :
